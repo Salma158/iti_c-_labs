@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1699983726 source:c:\users\dell\desktop\os -intake44\lab5 - complex\main.cpp
+	<iostream>
+	<string.h>
+
