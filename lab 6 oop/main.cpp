@@ -12,6 +12,8 @@ public:
     Point() : x(0), y(0) {}
     Point(int _x, int _y) : x(_x), y(_y) {}
 
+
+
     void set_x(int _x)
     {
         x = _x;
@@ -40,12 +42,12 @@ public:
     {
         cout << "(" << x << "," << y << ")" << endl;
     }
+
 };
 
 class shape
 {
 protected:
-    //int color;
     Point p1;
     Point p2;
 public :
@@ -56,6 +58,7 @@ public :
     {
         cout << "i will draw" << endl;
     }
+     friend istream & operator >> (istream &in,  shape &s);
 
 };
 
@@ -64,11 +67,12 @@ public :
 class Line : public shape
 {
 public:
+    Line(){}
     Line(int p1x, int p1y, int p2x, int p2y) : shape(p1x, p1y,p2x, p2y) {}
 
     void draw()
     {
-
+        setcolor(GREEN);
         line(p1.get_x(),p1.get_y(),p2.get_x(),p2.get_y());
     }
 };
@@ -78,6 +82,7 @@ class Circle : public shape
     int radius;
 
 public:
+    Circle(){}
     Circle(int r, int x, int y) : shape(x,y)
     {
         radius = r;
@@ -85,8 +90,10 @@ public:
 
     void draw()
     {
+        setcolor(YELLOW);
         circle(p1.get_x(),p1.get_y(),radius);
     }
+    friend istream & operator >> (istream &in,  Circle &c);
 };
 
 class Rectanglee : public shape
@@ -98,6 +105,7 @@ public:
     }
     void draw()
     {
+        setcolor(RED);
         rectangle(p1.get_x(),p1.get_y(),p2.get_x(), p2.get_y());
     }
 
@@ -109,57 +117,59 @@ int main()
     cin >> x ;
     shape * shapes[x];
 
-    for(int i=0; i<x; i++){
+    for(int i=0; i<x; i++)
+    {
         char str[100];
         cout<< "please enter shape" << " [" << i <<"]" <<  endl;
         cin >> str;
-        if (strcmp(str, "line")==0){
-            int x,y,z,l;
-            cout << "point 1 x : " << endl;
-            cin >> x;
-            cout << "point 1 y : " << endl;
-            cin >> y;
-            cout << "point 2 x : " << endl;
-            cin >> z;
-            cout << "point 2 y : " << endl;
-            cin >> l;
-            shapes[i]= new Line(x,y,z,l);
+        if (strcmp(str, "line")==0)
+        {
+            Line *linee = new Line;
+            cin >> *linee;
+            shapes[i]= linee;
         }
         else if (strcmp(str, "circle")==0)
         {
-            int radius;
-            int x,y;
-            cout << "please radius : " << endl;
-            cin >> radius;
-            cout << "point x : " << endl;
-            cin >> x;
-            cout << "point y : " << endl;
-            cin >> y;
-            shapes[i]= new Circle(radius, x,y);
+            Circle *circle = new Circle;
+            cin >> *circle;
+            shapes[i]= circle;
         }
         else if(strcmp(str, "rectangle")==0)
         {
-            int x,y,z,l;
-            cout << "point 1 x : " << endl;
-            cin >> x;
-            cout << "point 1 y : " << endl;
-            cin >> y;
-            cout << "point 2 x : " << endl;
-            cin >> z;
-            cout << "point 2 y : " << endl;
-            cin >> l;
-            shapes[i]= new Rectanglee(x,y,z,l);
+            Rectanglee *rec = new Rectanglee;
+            cin >> *rec;
+            shapes[i]= rec;
         }
     }
     initwindow(300,400,"graph");
     for(int i=0; i<x; i++)
     {
-     shapes[i]->draw();
-
+        cout << "Shape " << i << ": ";
+        shapes[i]->draw();
     }
     getch();
     closegraph();
-
     return 0;
+}
 
+istream & operator >> (istream &in,  shape &s)
+{
+    cout << "point 1 , x coordinate :  ";
+    in >> s.p1.x;
+    cout << "point 1 , y coordinate : ";
+    in >> s.p1.y;
+    cout << "point 2 , x coordinate :  ";
+    in >> s.p2.x;
+    cout << "point 2 , y coordinate : ";
+    in >> s.p2.y;
+    return in;
+}
+ istream & operator >> (istream &in,  Circle &c){
+    cout << "circle radius :  ";
+    in >> c.radius;
+    cout << "point : x coordinate : ";
+    in >> c.p1.x;
+    cout << "point : y coordinate :  ";
+    in >> c.p1.y;
+    return in;
 }
