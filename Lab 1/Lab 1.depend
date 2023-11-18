@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1700347247 source:c:\users\dell\desktop\os -intake44\lab 1\main.cpp
+	<iostream>
+	"Complex.h"
+	"swap.h"
+
+1700347187 source:c:\users\dell\desktop\os -intake44\lab 1\src\complex.cpp
+	"Complex.h"
+	<iostream>
+
+1700347308 c:\users\dell\desktop\os -intake44\lab 1\include\complex.h
+
+1700340691 c:\users\dell\desktop\os -intake44\lab 1\include\functions.h
+
+1700341282 c:\users\dell\desktop\os -intake44\lab 1\include\swapping.h
+
+1700341283 source:c:\users\dell\desktop\os -intake44\lab 1\src\swapping.cpp
+	"swapping.h"
+
+1700345955 c:\users\dell\desktop\os -intake44\lab 1\swapping.h
+
+1700346544 c:\users\dell\desktop\os -intake44\lab 1\include\swap.h
+
+1700346623 source:c:\users\dell\desktop\os -intake44\lab 1\src\swap.cpp
+	"swap.h"
+	<iostream>
+
