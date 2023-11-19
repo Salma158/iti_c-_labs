@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1700363236 source:c:\users\dell\desktop\os -intake44\lab 7\main.cpp
+	<iostream>
+	<graphics.h>
+	<vector>
+	<Line.h>
+	<Circle.h>
+	<RectangLe.h>
+	<Point.h>
+	<Shape.h>
+
+1700363236 c:\users\dell\desktop\os -intake44\lab 7\include\line.h
+	"Shape.h"
+	<iostream>
+
+1700363579 c:\users\dell\desktop\os -intake44\lab 7\include\shape.h
+	"Point.h"
+
+1700363236 c:\users\dell\desktop\os -intake44\lab 7\include\point.h
+
+1700363236 c:\users\dell\desktop\os -intake44\lab 7\include\circle.h
+	"Shape.h"
+	<iostream>
+
+1700363236 c:\users\dell\desktop\os -intake44\lab 7\include\rectangle.h
+	"Shape.h"
+	<iostream>
+
+1700363236 source:c:\users\dell\desktop\os -intake44\lab 7\src\circle.cpp
+	"Circle.h"
+	"Shape.h"
+	"graphics.h"
+
+1700363236 source:c:\users\dell\desktop\os -intake44\lab 7\src\line.cpp
+	"Line.h"
+	"Shape.h"
+	"graphics.h"
+	<iostream>
+
+1700363236 source:c:\users\dell\desktop\os -intake44\lab 7\src\point.cpp
+	"Point.h"
+	<iostream>
+
+1700363236 source:c:\users\dell\desktop\os -intake44\lab 7\src\shape.cpp
+	"Shape.h"
+	"Point.h"
+	<iostream>
+
+1700363292 source:c:\users\dell\desktop\os -intake44\lab 7\src\rectangle.cpp
+	"RectangLe.h"
+	"Shape.h"
+	"graphics.h"
+	<iostream>
+
