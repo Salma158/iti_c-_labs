@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1701184125 source:d:\lab 4\main.cpp
+	<iostream>
+	<Complex.h>
+	<Stack.h>
+
+1701173784 d:\lab 4\include\complex.h
+	<iostream>
+
+1701174198 source:d:\lab 4\src\complex.cpp
+	"Complex.h"
+	<iostream>
+	<string.h>
+
+1701184101 d:\lab 4\include\stack.h
+
+1701184134 source:d:\lab 4\src\stack.cpp
+	"Stack.h"
+	<iostream>
+
