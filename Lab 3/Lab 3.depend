@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1701356861 source:c:\users\dell\desktop\lab 3\main.cpp
+	<iostream>
+	<Stack.h>
+
+1701356943 c:\users\dell\desktop\lab 3\include\stack.h
+
+1701356854 source:c:\users\dell\desktop\lab 3\src\stack.cpp
+	"Stack.h"
+	<iostream>
+
